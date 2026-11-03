@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<base target="_top">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>剛好系列-課堂任務通</title>
+
+<!-- 外部函式庫：Tailwind CSS（含日系大地色調色盤設定）、字型、PDF 轉圖片、QR Code -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/tailwind.config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body class="text-slate-700">
+<div id="app"></div>
+<div id="modal-root"></div>
+<div id="toast-root" class="fixed top-4 left-1/2 -translate-x-1/2 z-[999] flex flex-col gap-2 items-center"></div>
+
+<!--
+  前端模組（依序載入，共用全域函式；最後由 app.js 啟動）
+  core/     共用工具、狀態與快取、函式庫按需載入
+  pages/    首頁、作品藝廊
+  teacher/  教師後台各分頁
+  student/  學生登入與儀表板
+  tasks/    各種互動任務的學生端畫面（一種任務一個檔案）
+-->
+<script src="js/core/utils.js"></script>
+<script src="js/core/loaders.js"></script>
+<script src="js/core/state.js"></script>
+<script src="js/core/classroom-door.js"></script>
+<script src="js/pages/landing.js"></script>
+<script src="js/teacher/auth.js"></script>
+<script src="js/teacher/dashboard.js"></script>
+<script src="js/teacher/class-detail.js"></script>
+<script src="js/teacher/content.js"></script>
+<script src="js/teacher/task-editor.js"></script>
+<script src="js/teacher/text-content-editor.js"></script>
+<script src="js/teacher/quiz-manager.js"></script>
+<script src="js/teacher/pdf-notes-review.js"></script>
+<script src="js/teacher/students.js"></script>
+<script src="js/teacher/grading.js"></script>
+<script src="js/teacher/class-settings.js"></script>
+<script src="js/teacher/storage.js"></script>
+<script src="js/student/login.js"></script>
+<script src="js/student/dashboard.js"></script>
+<script src="js/tasks/dispatch.js"></script>
+<script src="js/tasks/link.js"></script>
+<script src="js/tasks/file-share.js"></script>
+<script src="js/tasks/photo-text.js"></script>
+<script src="js/tasks/drawing.js"></script>
+<script src="js/tasks/quiz.js"></script>
+<script src="js/tasks/pdf-reader.js"></script>
+<script src="js/tasks/youtube.js"></script>
+<script src="js/tasks/markdown-engine.js"></script>
+<script src="js/tasks/markdown.js"></script>
+<script src="js/tasks/html-share.js"></script>
+<script src="js/pages/gallery.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
