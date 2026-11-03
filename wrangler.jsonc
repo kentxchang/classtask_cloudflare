@@ -1,0 +1,31 @@
+{
+  // 專案名稱：會成為網址的一部分（只能用英文小寫、數字和 -）
+  "name": "classtask",
+  "main": "src/index.ts",
+  "compatibility_date": "2024-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // 前端靜態檔案（public/index.html）
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+
+  // Durable Object 資料庫繫結（內建 SQLite）
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "ROOMS",
+        "class_name": "ClassroomDB"
+      }
+    ]
+  },
+
+  // 必須使用 new_sqlite_classes 以相容 Cloudflare 免費方案
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["ClassroomDB"]
+    }
+  ]
+}
